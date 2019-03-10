@@ -16,7 +16,7 @@ class TasksController < ApplicationController
 
     if @task.save
       flash[:success] = 'Task が正常に投稿されました'
-      redirect_to @tasks
+      redirect_to @task
     else
       flash.now[:danger] = 'Task が投稿されませんでした'
       render :new
@@ -41,7 +41,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
-    @Task.destroy
+    @task.destroy
 
     flash[:success] = 'Task は正常に削除されました'
     redirect_to tasks_url
