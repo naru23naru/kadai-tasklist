@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: tasklis_production
   username: tasklis
   password: <%= ENV['TASKLIS_DATABASE_PASSWORD'] %>
